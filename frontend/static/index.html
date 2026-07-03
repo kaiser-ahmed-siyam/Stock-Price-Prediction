@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DSE Stock Price Prediction</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel form-panel">
+        <div class="header">
+          <p class="eyebrow">DSE Forecast Service</p>
+          <h1>Next close price prediction</h1>
+        </div>
+
+        <form id="prediction-form" class="grid">
+          <label>
+            Stock
+            <select id="stock" name="stock" required></select>
+          </label>
+          <label>
+            Open price
+            <input name="open_price" type="number" step="0.0001" min="0" required />
+          </label>
+          <label>
+            High price
+            <input name="high_price" type="number" step="0.0001" min="0" required />
+          </label>
+          <label>
+            Low price
+            <input name="low_price" type="number" step="0.0001" min="0" required />
+          </label>
+          <label>
+            Close price
+            <input name="close_price" type="number" step="0.0001" min="0" required />
+          </label>
+          <label>
+            Volume
+            <input name="volume" type="number" step="1" min="0" required />
+          </label>
+          <button type="submit">Predict</button>
+        </form>
+      </section>
+
+      <section class="panel result-panel">
+        <div>
+          <p class="eyebrow">Prediction</p>
+          <div id="status" class="status">Enter market values to calculate a forecast.</div>
+        </div>
+        <div class="metric">
+          <span>Predicted close</span>
+          <strong id="predicted">--</strong>
+        </div>
+        <div class="metric-row">
+          <div class="metric small">
+            <span>Expected change</span>
+            <strong id="change">--</strong>
+          </div>
+          <div class="metric small">
+            <span>Change percent</span>
+            <strong id="change-percent">--</strong>
+          </div>
+        </div>
+        <div class="meta" id="metadata">Loading model metadata...</div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
