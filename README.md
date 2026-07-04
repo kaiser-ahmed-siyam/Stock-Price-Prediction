@@ -50,6 +50,8 @@ pip install -r requirements.txt && python -m backend.app.training.train
 uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
 ```
 
+Render now defaults new Python services to Python 3.14.x. This project pins Python 3.11.9 in `.python-version` and `render.yaml` so scientific packages such as NumPy, SciPy, pandas, and scikit-learn install from stable wheels instead of compiling from source.
+
 ## Notebook Improvements Applied
 
 - Target and lag features are computed per stock instead of across the full dataset.
