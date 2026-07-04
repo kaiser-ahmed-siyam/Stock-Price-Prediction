@@ -16,7 +16,7 @@ body {
 
 .shell {
   width: min(1120px, calc(100% - 32px));
-  min-height: 100vh;
+  min-height: calc(100vh - 190px);
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
@@ -74,6 +74,55 @@ h1 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+}
+
+.contact-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #13202e;
+  color: #f7fbff;
+}
+
+.contact-inner {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 22px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.contact-section .eyebrow {
+  color: #7ed6c5;
+  font-size: 0.68rem;
+  margin-bottom: 6px;
+}
+
+.contact-section h2 {
+  margin: 0;
+  color: #f7fbff;
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.contact-links {
+  display: grid;
+  gap: 7px;
+  justify-items: end;
+}
+
+.contact-links a {
+  color: #b7c4d2;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.contact-links a:hover,
+.contact-links a:focus {
+  color: #7ed6c5;
 }
 
 label {
@@ -171,10 +220,25 @@ button:disabled {
 
   .shell {
     align-items: start;
+    min-height: auto;
   }
 
   .form-panel,
   .result-panel {
     padding: 22px;
+  }
+
+  .contact-inner {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contact-links {
+    justify-items: start;
+  }
+
+  .contact-links a {
+    font-size: 0.84rem;
   }
 }
