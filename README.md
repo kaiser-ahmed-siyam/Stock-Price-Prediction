@@ -41,7 +41,8 @@ Open `http://127.0.0.1:8000` for the frontend and `http://127.0.0.1:8000/docs` f
 
 The backend computes rolling features and lag values from the stored stock history, then returns the predicted next close price.
 
-## Render Deployment
+## Website
+[Stock Price Prediction](https://stock-price-prediction-iw1s.onrender.com/) Render Deployment
 
 This repository includes `render.yaml`. Push the project to GitHub, create a new Blueprint on Render, and Render will run:
 
@@ -52,8 +53,7 @@ uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
 
 Render now defaults new Python services to Python 3.14.x. This project pins Python 3.11.9 in `.python-version` and `render.yaml` so scientific packages such as NumPy, SciPy, pandas, and scikit-learn install from stable wheels instead of compiling from source.
 
-## Website
-[Stock Price Prediction](https://stock-price-prediction-iw1s.onrender.com/)
+
 ## Notebook Improvements Applied
 
 - Target and lag features are computed per stock instead of across the full dataset.
